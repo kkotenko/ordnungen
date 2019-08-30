@@ -2,29 +2,33 @@
 % Nutzbar für Ordnungen
 \usepackage{enumerate}
 
-\counterwithout{section}{chapter}
-\setsecnumformat{§~\csname the#1\endcsname\quad}
-
-
-\newenvironment{para}{%
-	\begin{enumerate}[(1)]
-	}
-{\end{enumerate}
-}
+%\counterwithout{section}{chapter}
+%\setsecnumformat{§~\csname the#1\endcsname\quad}
+%
+%
+%\newenvironment{para}{%
+%	\begin{enumerate}[(1)]
+%	}
+%{\end{enumerate}
+%}
 
 \newenvironment{subpara}{%
 	\begin{enumerate}[(a)]
 }{\end{enumerate}}
 
 % Librarium Header
-\makepagestyle{librarium}
-\makeevenhead{librarium}{}{}{}
-\makeoddhead{librarium}{}{}{}
-\makeevenfoot{librarium}{}{}{}
-\makeoddfoot{librarium}{}{}{}
-
-\makepagestyle{librarium-plain}
-\makeevenhead{librarium}{}{}{}
-\makeoddhead{librarium}{}{}{}
-\makeevenfoot{librarium}{}{}{}
-\makeoddfoot{librarium}{}{}{}
+%\makepagestyle{librarium}
+%\makeevenhead{librarium}{}{}{}
+%\makeoddhead{librarium}{}{}{}
+%\makeevenfoot{librarium}{}{}{}
+%\makeoddfoot{librarium}{}{}{}
+%
+%\makepagestyle{librarium-plain}
+%\makeevenhead{librarium}{}{}{}
+%\makeoddhead{librarium}{}{}{}
+%\makeevenfoot{librarium}{}{}{}
+%\makeoddfoot{librarium}{}{}{}
+\usepackage[clausemark=forceboth,
+            juratotoc,
+            juratocnumberwidth=2.5em]
+           {scrjura}

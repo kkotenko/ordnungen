@@ -1,7 +1,7 @@
 %%%
 % Document Class
-\documentclass[11pt,a4paper,twoside,openany]{memoir}
-% openright: each chapter will start on a recto page.
+\documentclass[11pt,a4paper,twoside]{scrartcl}
+% openright: each chapter will start on a recto page
 %
 %%%
 
@@ -59,16 +59,16 @@
 % Memoir Class Page formatting
 %
 % Change line witdh to new font
-\setlxvchars \setxlvchars 
-% 5mm binding tollerance
-%\setbinding{5mm} 
-\settypeblocksize{600pt}{1.2\lxvchars}{*}
-\setlrmargins{*}{*}{1}
-\setulmargins{4cm}{*}{*}
-\setheadfoot{2\onelineskip}{2\onelineskip}
-\setmarginnotes{17pt}{3.5cm}{\onelineskip}
-\checkandfixthelayout 
-%%%
+%\setlxvchars \setxlvchars 
+%% 5mm binding tollerance
+%%\setbinding{5mm} 
+%\settypeblocksize{600pt}{1.2\lxvchars}{*}
+%\setlrmargins{*}{*}{1}
+%\setulmargins{4cm}{*}{*}
+%\setheadfoot{2\onelineskip}{2\onelineskip}
+%\setmarginnotes{17pt}{3.5cm}{\onelineskip}
+%\checkandfixthelayout 
+%%%%
 % Superscripts for 1st, 2nd, 3rd, 4th
 % \nth{3}
 \usepackage[super]{nth}
@@ -90,11 +90,11 @@
 %\chapterstyle{hansen} % use for nice chapter
 %\chapterstyle{karticle} % use for articles
 
-\makechapterstyle{librariumordnung}{}
-\chapterstyle{librariumordnung}
+%\makechapterstyle{librariumordnung}{}
+%\chapterstyle{librariumordnung}
 
 % Section Style
-\setsecheadstyle{\Large\bfseries\raggedright}
+%\setsecheadstyle{\Large\bfseries\raggedright}
 %
 %%%
 
@@ -131,8 +131,8 @@
 
 %%%%
 % Tables
-\DisemulatePackage{tabularx}
-\usepackage{multirow,tabu, makecell}
+%\DisemulatePackage{tabularx}
+%\usepackage{multirow,tabu, makecell}
 %
 %%%
 
