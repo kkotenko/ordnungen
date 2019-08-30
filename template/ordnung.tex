@@ -6,7 +6,8 @@
 \setsecnumformat{§~\csname the#1\endcsname\quad}
 
 
-\newenvironment{para}{%
+\newenvironment{para}[1]{%
+	\section{#1}
 	\begin{enumerate}[(1)]
 	}
 {\end{enumerate}
