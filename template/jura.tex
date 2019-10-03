@@ -1,0 +1,60 @@
+
+%%%
+% Configure Title
+\setlength{\droptitle}{0pt}
+\pretitle{\begin{center}\LARGE\scshape\addfontfeature{LetterSpace=17}}
+\posttitle{\addfontfeature{LetterSpace=0.0}\rmfamily\par\end{center}}
+%%%
+
+%%%
+% Do not show chapters
+\counterwithout{section}{chapter}
+\setsecnumformat{§~\csname the#1\endcsname\quad}
+%%%
+
+% Nutzbar für Ordnungen
+\usepackage{enumitem}
+
+%%%
+\newenvironment{para}[1]{%
+	\section{#1}
+	\begin{enumerate}[label=(\arabic*), ref=\thesection~Abs.~\arabic*]
+}{%
+	\end{enumerate}
+}
+
+\newenvironment{subpara}{%
+	\begin{enumerate}[label=(\alph*), ref=\theenumi~\alph*]
+}{\end{enumerate}}
+
+% References
+\newcommand{\pararef}[1]{§~\ref{#1}}
+\newcommand{\parasref}[1]{§§~\ref{#1}}
+%\newcommand{ppref}[1]
+%%%
+
+
+%%%
+% Implement explicit document history
+\newenvironment{changes}{%
+\vspace{2em}
+\tightlist
+\begin{description}
+}{%
+\end{description}
+\defaultlists
+}
+%%%
+
+% Librarium Header
+\makepagestyle{librarium}
+\makeevenhead{librarium}{}{}{}
+\makeoddhead{librarium}{}{}{}
+\makeevenfoot{librarium}{}{}{}
+\makeoddfoot{librarium}{}{}{}
+
+\makepagestyle{librarium-plain}
+\makeevenhead{librarium}{}{}{}
+\makeoddhead{librarium}{}{}{}
+\makeevenfoot{librarium}{}{}{}
+\makeoddfoot{librarium}{}{}{}
