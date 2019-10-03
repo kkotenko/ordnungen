@@ -1,4 +1,4 @@
-## This is the .gitignore file. Files listed here 
+## This is the .gitignore file. Files listed here
 ## can only be added with git add -f
 ## and are ignored otherwise
 
@@ -13,6 +13,8 @@ satzung.pdf
 *.aux
 *.ist
 *.log
+*.fls
+*.fdb_latexmk
 
 
 
