@@ -4,7 +4,7 @@
 
 
 # Output file (don't store binary data unless needed)
-satzung.pdf
+*.pdf
 
 # Compile helper files
 *.acn
