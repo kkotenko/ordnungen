@@ -1,13 +1,18 @@
+\input{templates/generic}
+\input{templates/pagestyles}
+
+%Configure hyperref
 \hypersetup{
 pdfauthor={\@protokollant},
 pdftitle={Protokoll der Mitgliederversammlung vom \@date},
 pdfsubject={},
 pdfkeywords={},
 bookmarks=true,
-colorlinks=true,
+colorlinks=false,
 urlcolor=black,
 hyperindex=true}
 
+% Do not indent new paragraphs in protocols. It looks strange.
 \parindent0mm
 
 %%%
@@ -38,6 +43,7 @@ hyperindex=true}
 
 %Changes order of title elements
 \renewcommand{\@maketitle}{%
+   \null
    \vskip 2em%
    \vspace*{\droptitle}
    \maketitlehooka
@@ -53,6 +59,7 @@ hyperindex=true}
 
 \setlength{\droptitle}{0pt}
 
+% Define content of title
 \pretitle{\Large\bfseries}
           \title{Protokoll der Mitgliederversammlung \@mvnum}
 \posttitle{\par\vskip 0.5em}
@@ -68,6 +75,8 @@ hyperindex=true}
           }
 \postauthor{\end{tabular}\par}
 
+% Set pagestyle for title page
+\aliaspagestyle{title}{withfooter}
 \makeatother
 %%%
 
@@ -127,5 +136,4 @@ Sitzungsleitung & Protokollführer & weiteres Mitglied
 Sitzungsleitung & Protokollführer & weiteres Mitglied
 \end{tabular}
 }
-
 %%%

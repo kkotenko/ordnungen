@@ -1,0 +1,40 @@
+%%%
+% Header & Footer
+
+% Define Librarium meta infos
+\colorlet{footercolor}{librarium-lightgreen}
+
+\newcommand\addLibrariumData{%
+\begin{picture}(0,0)%
+  \put(0,-30){%
+  \tiny%
+  \color{footercolor}%
+  \begin{tabular}{@{}l l l l}
+  \makecell[l]{RPG Librarium Aachen e.V. \\ Postfach 101632 \\ 52016 Aachen} & \makecell[l]{kontakt@rpg-librarium.de \\ vorstand@rpg-librarium.de \\ https://rpg-librarium.de} & \makecell[l]{Sparkasse Aachen \\ IBAN DE 56 3905 0000  1072 3914 18 \\ BIC AACSDE33} & \makecell[l]{Amtsgericht Aachen VR5440 \\ Finanzamt Aachen \\ Steuer-Nr. 201/5915/5139}
+  \end{tabular}%
+  }%
+\end{picture}%
+}
+
+\usepackage{lastpage}
+\makeatletter
+\makepagestyle{librarium}
+\makeevenhead{librarium}{}{}{\scshape Mitgliederversammlung \@mvnum}
+\makeoddhead{librarium}{\scshape Mitgliederversammlung \@mvnum}{}{}
+\makeevenfoot{librarium}{\addLibrariumData}{Seite \thepage{} von \pageref{LastPage}}{}
+\makeoddfoot{librarium}{\addLibrariumData}{Seite \thepage{} von \pageref{LastPage}}{}
+\makeatother
+
+% Provided pagestyle with footer only, e.g. for title page.
+\copypagestyle{librarium-footer}{librarium}
+\makeevenhead{librarium-footer}{}{}{}
+\makeoddhead{librarium-footer}{}{}{}
+
+% Provide pagestyle with header only.
+\copypagestyle{librarium-header}{librarium}
+\makeevenfoot{librarium-header}{}{}{}
+\makeoddfoot{librarium-header}{}{}{}
+
+% expose footer for generic implementations
+\aliaspagestyle{withfooter}{librarium-footer}
+%%%
