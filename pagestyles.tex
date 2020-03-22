@@ -20,7 +20,7 @@
 \makeatletter
 \makepagestyle{librarium}
 \makeevenhead{librarium}{}{}{\scshape \@sitzungstype \@sitzungsnum}
-\makeoddhead{librarium}{\scshape \@sitzungstype \@sitzungsnum}{}{}
+\makeoddhead{librarium}{\scshape \@sitzungstype{} \@sitzungsnum}{}{}
 \makeevenfoot{librarium}{\addLibrariumData}{Seite \thepage{} von \pageref{LastPage}}{}
 \makeoddfoot{librarium}{\addLibrariumData}{Seite \thepage{} von \pageref{LastPage}}{}
 \makeatother
