@@ -1,6 +1,7 @@
 %%%
 % Silbentrennung
 \usepackage[ngerman]{babel}
+%%%
 
 %%%
 % Metadata
@@ -10,44 +11,15 @@
 %%%
 % Fonts and typesetting
 \usepackage{mathspec} %includes fontspec
-%\setmainfont[BoldFont={Source S Pro Semibold}, ItalicFont={Source Sans Pro Italic}, BoldItalicFont={Source Sans Pro Semibold Italic}]{Source Sans Pro}
+
+% Have bold symbols in math
 \usepackage{bm}
+
+% Controlls loading of TTF and OTF fonts
 \usepackage{fontspec}
-\setmainfont[
-UprightFont={* Light},
-BoldFont={* Semibold},
-ItalicFont={* Light Italic},
-BoldItalicFont={* Semibold Italic}
-]
-{Source Serif Pro}
 
-\setsansfont[
-UprightFont={* Light},
-BoldFont={* Semibold},
-ItalicFont={* Light Italic},
-BoldItalicFont={* Semibold Italic}]
-{Source Sans Pro}%
-[Scale=MatchLowercase]
-
-\setmonofont[
-BoldFont={Source Code Pro Semibold}]
-{Source Code Pro Light}%
-[Scale=MatchLowercase]
-
-\setmathfont(Digits,Latin)[
-UprightFont={* Light},
-BoldFont={* Semibold},
-ItalicFont={* Light Italic},
-BoldItalicFont={* Semibold Italic}
-]
-{Source Serif Pro}
-
-\setmathfont(Greek)[
-UprightFont={* Light},
-BoldFont={* Semibold},
-AutoFakeSlant=0.15
-]
-{Source Serif Pro}
+% Set specific fonts
+\input{templates/fonts}
 
 % Fix mathspec before amsmath bug
 % https://tex.stackexchange.com/questions/85696/what-causes-this-strange-interaction-between-glossaries-and-amsmath
