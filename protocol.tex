@@ -4,7 +4,7 @@
 %Configure hyperref
 \hypersetup{
 pdfauthor={\@protokollant},
-pdftitle={Protokoll der Mitgliederversammlung vom \@date},
+pdftitle={Protokoll der \@sitzungstype{} vom \@date},
 pdfsubject={},
 pdfkeywords={},
 bookmarks=true,
@@ -37,9 +37,20 @@ hyperindex=true}
 \newcommand\protokollant[1]{\renewcommand\@protokollant{#1}}
 \newcommand\@protokollant{\@latex@error{No \noexpand\protokollant given}\@ehc}
 
+
+\newcommand\vs[1]{
+\renewcommand\@sitzungstype{Vorstandssitzung}
+\renewcommand\@sitzungsnum{#1}}
+
+\newcommand\mv[1]{
+\renewcommand\@sitzungstype{Mitgliederversammlung}
+\renewcommand\@sitzungsnum{#1}}
+
+% Sitzungtype
+\newcommand\@sitzungstype{\@latex@error{No \noexpand\sitzungstype given}\@ehc}
 % MV Counter variable
-\newcommand\mvnum[1]{\renewcommand\@mvnum{#1}}
-\newcommand\@mvnum{\@latex@error{No \noexpand\mvnum given}\@ehc}
+\newcommand\@sitzungsnum{\@latex@error{No \noexpand\sitzungsnum given}\@ehc}
+
 
 %Changes order of title elements
 \renewcommand{\@maketitle}{%
@@ -61,7 +72,7 @@ hyperindex=true}
 
 % Define content of title
 \pretitle{\Large\bfseries}
-          \title{Protokoll der Mitgliederversammlung \@mvnum}
+          \title{Protokoll der \@sitzungstype{} \@sitzungsnum}
 \posttitle{\par\vskip 0.5em}
 
 \date{\@datum \\
@@ -133,7 +144,7 @@ Sitzungsleitung & Protokollführer & weiteres Mitglied
 \vspace{2.5cm}
 
 \begin{tabular}{p{.3\textwidth} p{.3\textwidth} p{.3\textwidth}}
-Sitzungsleitung & Protokollführer & weiteres Mitglied
+Sitzungsleitung & Protokollführer
 \end{tabular}
 }
 %%%
