@@ -1,13 +1,20 @@
 # Librarium Latex Templates
-Dies sind hilfreiche Templates für Vereinsmeierei. Es wird erwartet, dass templates im Unterverzeichnis `templates` liegen.
+Dies sind hilfreiche Latex Klassen und Pakete für Vereinsmeierei. Es wird erwartet, dass diese Dateien im TeX-Home liegen.
 
-## Einbinden der Templates mit git.
-```
-git submodule add -b master https://github.com/RPGLibrarium/templates.git
-git submodule update --init --recursive
-```
+In der Regel ist das
+* unter Linux:
+```~/texmf/tex/latex/```
+* unter Windows:
+```C:\Users\<user name>\Appdata\Local\MikTex\<number>\tex\latex\```
+* unter Mac:
+```/Users/<user name>/Library/texmf/tex/latex/```
 
-Um das Template zu aktualisieren:
-```
-git submodule update --init --recursive
-```
+Alternativ 
+
+# Schriftarten
+
+Die Klassen hängen von den Adobe Source Schriftfamilien ab: 
+
+* [Source Serif Pro](https://github.com/adobe-fonts/source-serif-pro/releases/tag/variable-fonts)
+* [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro/releases/tag/variable-fonts)
+* [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/releases/tag/variable-fonts)
