@@ -21,6 +21,7 @@
 
 % Do not indent new paragraphs in protocols. It looks strange.
 \parindent0mm
+\nonzeroparskip
 
 %%%
 % Configure Title
