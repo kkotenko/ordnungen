@@ -1,0 +1,100 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lbrcolor}[2020/04/17 RPG Librarium CI colors]
+
+%%%
+% Branching
+\RequirePackage{ifthen}
+%
+%%%
+
+
+%%%
+% Options
+
+% Default RGB
+\newcommand\lbr@colorspace{rgb}
+
+\DeclareOption{rgb}{\renewcommand\lbr@colorspace{rgb}}
+\DeclareOption{cmyk}{\renewcommand\lbr@colorspace{cmyk}}
+\DeclareOption*{\PackageWarning{lbrcolor}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
+%
+%%%
+
+
+%%%
+% Dependencies
+\PassOptionsToPackage{\lbr@colorspace}{xcolor}
+\RequirePackage{xcolor}
+%
+%%%
+
+
+%%% 
+% CD Color Palette
+\ifthenelse{\equal{\lbr@colorspace}{cmyk}}{
+    % CMYK
+    % Tannengrün
+    \definecolor{librarium-grün1}{cmyk}{.72, .00, .69, .36}
+
+    % Grasgrün
+    \definecolor{librarium-grün1}{cmyk}{.34, .00, .77, .32}
+
+    % Blau
+    \definecolor{librarium-blau}{cmyk}{.822, .47, .097, .026}
+
+    % Rot
+    \definecolor{librarium-rot}{cmyk}{.102, .834, .755, .038}
+
+    % Braun
+    \definecolor{librarium-braun}{cmyk}{.00, .12, .44, .36}
+
+    % Hell
+    \definecolor{librarium-hell}{cmyk}{.00, .00, .02, .09}
+
+    % Dunkel
+    \definecolor{librarium-dunkel}{cmyk}{.00, .07, .20, .78}
+
+    % Schwarz
+    \definecolor{librarium-schwarz}{cmyk}{.00, .00, .00, 1.0}
+    
+}{%else
+    % RGB
+    % Tannengrün
+    \definecolor{librarium-grün1}{RGB}{46, 162, 51}
+
+    % Grasgrün
+    \definecolor{librarium-grün2}{RGB}{115, 173, 39}
+
+    % Blau
+    \definecolor{librarium-blau}{RGB}{39, 115, 173}
+
+    % Rot
+    \definecolor{librarium-rot}{RGB}{211, 67, 57}
+
+    % Braun
+    \definecolor{librarium-braun}{RGB}{163, 141, 91}
+
+    % Hell
+    \definecolor{librarium-hell}{RGB}{231, 230, 226}
+
+    % Dunkel
+    \definecolor{librarium-dunkel}{RGB}{56, 52, 45}
+
+    % Schwarz
+    \definecolor{librarium-schwarz}{RGB}{0, 0, 0}
+
+}%fi
+
+
+
+%%%
+% Colors by use
+\colorlet{librarium-text}{librarium-schwarz}
+\colorlet{librarium-h1}{librarium-grün1}
+\colorlet{librarium-h2}{librarium-dunkel}
+\colorlet{librarium-h3}{librarium-grün2}
+\colorlet{librarium-highlight}{librarium-grün2}
+\colorlet{librarium-footer}{librarium-grün2}
+%
+%%%

@@ -1,16 +1,23 @@
-\input{templates/generic}
-\input{templates/pagestyles}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{lbrprotocol}[2014/08/16 RPG Librarium protocol document]
 
-%Configure hyperref
-\hypersetup{
-pdfauthor={\@protokollant},
-pdftitle={Protokoll der \@sitzungstype{} vom \@date},
-pdfsubject={},
-pdfkeywords={},
-bookmarks=true,
-colorlinks=false,
-urlcolor=black,
-hyperindex=true}
+
+%%%
+% Derive from class: LbrGeneric
+% http://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{lbrgeneric}}
+\ProcessOptions\relax
+% Default 
+\PassOptionsToClass{11pt,a4paper,twoside,openany,article}{lbrgeneric}
+\LoadClass{lbrgeneric}
+%
+%%%
+
+%%%
+\RequirePackage{lbrpagestyle}
+\pagestyle{librarium}
+%
+%%%
 
 % Do not indent new paragraphs in protocols. It looks strange.
 \parindent0mm
@@ -53,6 +60,26 @@ hyperindex=true}
 \newcommand\@sitzungsnum{\@latex@error{No \noexpand\sitzungsnum given}\@ehc}
 
 
+%%%
+%Configure hyperref
+\AtBeginDocument{
+  \hypersetup{
+    pdfauthor={\@protokollant},
+    pdftitle={Protokoll der \@sitzungstype{} vom \@date},
+    pdfsubject={},
+    pdfkeywords={}
+  }
+}
+\hypersetup{
+  bookmarks=true,
+  colorlinks=false,
+  urlcolor=black,
+  hyperindex=true
+}
+%
+%%%
+
+
 %Changes order of title elements
 \renewcommand{\@maketitle}{%
    \null
@@ -81,15 +108,16 @@ hyperindex=true}
 \postdate{\end{center}\par\vskip 0.5em}
 
 \preauthor{\noindent\vskip 1em \begin{tabular}{@{}lp{0.75 \textwidth}}}
-          \author{Protokollant: & \@protokollant \\
-          Sitzungsleitung: & \@sitzungsleitung \\
-          Anwesende: & \@anwesende \\
-          }
-\postauthor{\end{tabular}\par}
+\author{
+  Protokollant: & \@protokollant \\
+  Sitzungsleitung: & \@sitzungsleitung \\
+  Anwesende: & \@anwesende \\
+}
+\postauthor{\end{tabular}}
 
 % Set pagestyle for title page
 \aliaspagestyle{title}{withfooter}
-\makeatother
+
 %%%
 
 

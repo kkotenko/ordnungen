@@ -1,4 +1,37 @@
-\input{templates/generic}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{lbrjura}[2020/04/16 Legal RPG Librarium document]
+
+
+%%%
+% Derive from class: LbrGeneric
+% http://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{lbrgeneric}}
+\ProcessOptions\relax
+% Default 
+\PassOptionsToClass{11pt,a4paper,oneside,openany,article}{lbrgeneric}
+\LoadClass{lbrgeneric}
+%
+%%%
+
+%%%
+%Configure hyperref
+\AtBeginDocument{
+  \hypersetup{
+    pdfauthor={RPG Librarium Aachen e.V.},
+    pdftitle={\@title},
+    pdfsubject={},
+    pdfkeywords={}
+  }
+}
+\hypersetup{
+  bookmarks=true,
+  colorlinks=false,
+  urlcolor=black,
+  hyperindex=true
+}
+%
+%%%
+
 
 %%%
 % Configure Title
